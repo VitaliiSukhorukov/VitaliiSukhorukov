@@ -1,0 +1,24 @@
+@import url("common.css");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  padding: 10 0 10 0;
+}
+
+body {
+  color: var(--primary-text-color);
+  background: var(--primary-bg-color);
+}
+
+footer {
+  color: var(--footer-text-color);
+  background: var(--footer-bg-color);
+}
+.foo{
+  display: flex;
+  justify-content: space-around;
+}
