@@ -41,12 +41,12 @@ section p {
   color: indigo;
 }
 
-p.first>a {
+p.first a {
   color: green
 }
 
-p.first a {
-  color: green
+p>.first>a {
+  color: blue;
 }
 
 div~p {
@@ -80,7 +80,9 @@ div~p {
 body {
   font-size: 1.4em;
 }
+
 h1 {
-font-size: 2.4rem;
+  font-size: 2.4rem;
 }
+
 /* Task 7 end */
