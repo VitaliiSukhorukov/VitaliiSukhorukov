@@ -1,10 +1,18 @@
 @import url(common.css);
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+
+html {
+  color: var(--primary-text-color);
+  background-color: var(--primary-bg-color);
+}
 
 body {
   margin: 0;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  font-family: var(--primary-font-family);
+  font-size: var(--primary-font-size);
 }
 
 .main-container {
@@ -15,23 +23,52 @@ header,
 footer {
   text-align: center;
   padding: 10px;
-  background-color: #f0f0f0;
+  /* Task 8 start */
+  background-color: var(--footer-bg-color);
+  color: var(--footer-text-color);
+ /* Task 8 end */
 }
 
-footer ul {
+.list-main {
   display: flex;
   justify-content: space-around;
 }
 
-ul {
+.list-foter-social {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.foter-ligal {
+  padding: 0;
+}
+
+.fa-brands {
+  margin-left: 5px
+}
+
+.list-unstyled {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-body header nav ul {
+.nav-top ul {
   display: flex;
   justify-content: space-around;
+}
+
+.nav-icons ul {
+  display: flex;
+  justify-content: right;
+  margin-top: 10px;
+  margin-right: 67px;
+
+  >li {
+    font-size: 30px;
+    margin: 15px;
+  }
 }
 
 main {
@@ -40,12 +77,11 @@ main {
   justify-content: center;
   height: 100vh;
   margin: 0;
-  background-color: #f4f4f4;
+  /* background-color: #f4f4f4; */
 }
 
 .big-button {
   padding: 20px 40px;
-  text-decoration: none;
   color: #fff;
   background-color: #3498db;
   border-radius: 8px;
@@ -57,3 +93,57 @@ main {
 .big-button:hover {
   background-color: #2980b9;
 }
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 1.45rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+}
+
+
+.foo-legal p {
+  margin-top: 0;
+}
+
+.foter-social {
+  margin: 5px;
+}
+
+  	/* - Визначити клас text-uppercase з властивістю text-transform: uppercase;
+  	- Визначити клас bg-dark з властивістю background-color: black 
+    - Визначити клас text-white з властивістю color: white 
+    - Визначити селектор ul.categories li a з властивостями color: indigo,
+  	text-decoration: none,
+  	font-size: 1.2rem 
+    - Визначити селектор ul.categories li a з властивостями ul.categories li a:hover,
+  	background-color: lightgray */
+        /*************************************** Task 13 start ***************************************/
+.text-uppercase {
+  text-transform: uppercase;
+}
+.bg-dark {
+  background-color: black;
+}
+.text-white {
+  color: white;
+}
+ul.categories li a{
+  color: indigo;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+ul.categories li a:hover {
+  background-color: lightgray;
+}
+
+    
+        /*************************************** Task 13 end ***************************************/

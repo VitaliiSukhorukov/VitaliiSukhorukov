@@ -1,0 +1,22 @@
+
+/*************************************** Task 12 lesson 6 start ***************************************/
+:root {
+  --primary-text-color: #000;
+  --primary-bg-color: #fff;
+  --primary-font-family: 'Roboto', sans-serif;
+  --primary-font-size: 0.875rem;
+}
+
+/*************************************** Task 12 lesson 6 end ***************************************/
+
+
+    /* Task 8 start */
+footer, header {
+  --footer-text-color: #fff;
+  --footer-bg-color: #000;
+}
+        /* Task 8 end */
+a {
+  text-decoration: none;
+  color: inherit;
+}

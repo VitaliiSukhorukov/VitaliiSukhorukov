@@ -1,0 +1,86 @@
+.service {
+  color: black;
+}
+
+/* Task 2 start */
+h1,
+h2,
+h3 {
+  color: gray;
+}
+
+#main {
+  color: #e60202;
+}
+
+.h2 {
+  color: red;
+}
+
+.heading {
+  color: green;
+}
+
+/* Task 2 end */
+/* Task 3 start */
+ul>li {
+  font-weight: bold;
+}
+
+section>p {
+  color: red;
+}
+
+section p {
+  font-size: 1.5rem;
+}
+
+/* Task 3 end */
+/* Task 4 start */
+.task4 h2:first-of-type {
+  color: indigo;
+}
+
+p.first>a {
+  color: green
+}
+
+p.first a {
+  color: green
+}
+
+div~p {
+  color: salmon;
+}
+
+/* Task 4 end */
+/* Task 5 start */
+.color-item {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+  position: relative;
+  border: 1px solid black;
+  vertical-align: bottom;
+  margin-bottom: 2px;
+}
+
+/* Task 5 end */
+/* Task 6 start */
+.translucent-box {
+  background: hsl(0, 100%, 50%, 0.5);
+  width: 100px;
+  height: 100px;
+}
+
+/* Task 6 end */
+/* Task 7 start */
+body {
+  font-size: 1.4em;
+}
+h1 {
+font-size: 2.4rem;
+}
+/* Task 7 end */
