@@ -45,7 +45,7 @@ p.first a {
   color: green
 }
 
-p>.first>a {
+p .first a {
   color: blue;
 }
 
