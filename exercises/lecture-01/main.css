@@ -1,0 +1,32 @@
+:root{
+  font-size: 100%;
+}
+
+.square-parent {
+  box-sizing: border-box;
+  border: 1px solid black;
+  width: 700px;
+  height: 700px;
+  padding-top: 50px;
+}
+
+.square-child-1 {
+  box-sizing: border-box;
+  border: 1px solid black;
+  width: 300px;
+  height: 300px;
+  margin-top: 10px;
+  padding-top: 10px;
+  font-size: 2em;
+}
+
+.square-child-2 {
+  font-size: 200%;
+  box-sizing: border-box;
+  border: 1px solid black;
+  width: 300px;
+  height: 300px;
+  margin-top: 10px;
+  padding-top: 10px;
+  margin-bottom: 30px;
+}
