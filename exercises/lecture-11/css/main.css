@@ -45,9 +45,12 @@
 }
 .grid-wrapper-12{
   grid-template-columns: repeat(2, 1fr);
-  row-gap: 50px;
+  grid-template-rows: repeat(2, 30px);
+  align-content: space-evenly;
+  min-height: 300px;
+
 }
 .grid-wrapper-13{
   grid-template-columns: repeat(2, auto);
-  gap: 50px;
+  place-content: space-evenly;
 }
