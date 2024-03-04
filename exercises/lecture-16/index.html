@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+</head>
+
+<body>
+  <h1>Домашняя работа в комментариях к коду</h1>
+
+  <!-------------------------------------------- Task 1 
+  В середині script визначте 2 змінні message1 зі значенням Hello та message2 зі значенням JavaScript. Використовуючи ці змінні та alert, виконайте відображення рядка "Hello JavaScript!". 
+  -------------------------------------------->
+  <!-- <script>
+    var message1 = "Hello";
+    var message2 = "JavaScript";
+
+    var message = message1 + " " + message2 + "!";
+
+    alert(message);
+  </script> -->
+
+  <!-------------------------------------------- Task 2 Виправити помилку у коді -------------------------------------------->
+  <!-- Неірний варіант
+    <script>
+    'use strict';
+
+    message = hello;
+    message = 123456;
+  </script>
+
+  Вірний варіант
+  Потрібно оголосити змінну message, лише потім призначити їй значення використовуючи лапки
+
+  <script>
+    'use strict';
+    var message = 'hello';
+    message = 123456;
+
+  </script> -->
+
+  <!-------------------------------------------- Task 3 Напишіть програму, що запитує у користувача значення двох змінних x, y, та виводить їх суму
+  -------------------------------------------->
+
+  <!-- <script>
+  'use strict'
+
+  let firstNumber;  //Перша змінна
+  let secondNumber; //Друга змінна
+
+  firstNumber = checkData("Enter the first number:");
+  secondNumber = checkData("Enter the second number");
+
+  let sum = firstNumber + secondNumber;
+
+  alert(`The Sum of ${firstNumber} plus ${firstNumber} equals ${sum}`);
+
+  function checkData(promptMessage) {
+    let enteredData; //Змінна для введенних данних
+    let number; // Змінна для числа
+    do {
+      enteredData = prompt(promptMessage); // Запит введених даних
+      number = parseFloat(enteredData); //Конвертація введених даних у чиckj
+      if (isNaN(number)) { // Перевірка, чи введене значення є числом
+        alert("You entered a non-number. Please enter a number.");
+      }
+    } while (isNaN(number));
+    return number; // Повернення числа
+  }
+
+</script> -->
+
+  <!-------------------------------------------- Task 4 Виправити помилку у коді -------------------------------------------->
+  <!-- Неірний варіант -->
+  <!-- <script>
+    'use strict';
+
+    let a = 9007199254740991;
+    let b = 9007199254740991n;
+    console.log(a + b);
+    // Uncaught TypeError: can't convert BigInt to number
+  </script> -->
+
+  <!-- Потрібно перетворити змінну 'а' в BigInt -->
+  <!-- <script>
+  'use strict';
+
+  let a = 9007199254740991n; //  Перетворюємо `a` в BigInt
+  let b = 9007199254740991n;
+  console.log(a + b); // Результат: 18014398509481982n
+</script> -->
+
+  <!-------------------------------------------- Task 5 Перепишіть код так, щоб результат дорівнював 5 -------------------------------------------->
+  <!-- Неірний варіант -->
+  <!-- <script>
+    'use strict';
+
+    let apples = "2";
+    let oranges = "3";
+
+    alert(apples + oranges);
+
+  </script> -->
+  <!-- Потрібно разпарсити до числового типу -->
+  <!-- <script>
+    'use strict';
+
+    let apples = +"2";
+    let oranges = parseFloat("3");
+
+    alert(apples + oranges);
+
+  </script> -->
+
+  <!-------------------------------------------- Task 6 Які кінцеві значення всіх змінних a, b, c і d після виконання наведеного нижче коду? -------------------------------------------->
+
+
+  <!-- <script>
+    'use strict';
+
+    let a = 1, b = 1; //a та b равно 2
+    let c = ++a; //c = 2
+    let d = b++; // d = 1
+
+  </script> -->
+
+  <!-------------------------------------------- Task 7 Які значення a і x після виконання наведеного нижче коду? -------------------------------------------->
+
+  <!-- <script>
+          'use strict';
+
+          let a = 2; 
+          let x = 1 + (a *= 2);
+          // a = 4
+          // x = 5
+        </script> -->
+
+  <!-------------------------------------------- Task 8 Які результати цих виразів? -------------------------------------------->
+
+  <!-- <script>
+            'use strict';
+
+            "" + 1 + 0 //'10'
+            "" - 1 + 0 // -1
+            true + false // 1
+            6 / "3" // 2
+            "2" * "3" // 6
+            4 + 5 + "px" // '9px'
+            "$" + 4 + 5 // '$45'
+            "4" - 2 // 2
+            "4px" - 2 // NaN 
+            "  -9  " + 5 //'  -9  5'
+            "  -9  " - 5 //-14
+            null + 1 // 1
+            undefined + 1 // NaN
+            NaN + 1 //NaN
+          </script> -->
+
+  <!-------------------------------------------- Task 9 Маємо такий код скоротити цей код за допомогою операторів += і *=: -------------------------------------------->
+
+    <!-- <script>
+      'use strict';
+      let n = 2;
+      n = n + 5; // n += 5
+      n = n * 2; // n *= 2
+
+    </script> -->
+    
+  <!-------------------------------------------- Task 9 Маємо такий код Перетворити змінні n1, n2, n3, n4 на числа  -------------------------------------------->
+
+    <!-- <script>
+      let n1 = parseInt("   123   ");
+      let n2 = parseInt("123z");
+      let n3 = Number(true);
+      let n4 = Number(false);
+
+      console.log(n1, n2, n3, n4);
+      // Перетворити змінні n1, n2, n3, n4 на числа 
+    </script> -->
+</body>
+
+</html>
