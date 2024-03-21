@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+<div class="items">
+    <div class="item">
+        <a class="button-link ">Exercise 1</a>
+        <code class="content">
+                let x = 3 <br>
+                let y = 4 <br><br>
+                x == 3---------<span>true</span><br>
+                x === "3"------<span>false</span><br>
+                x != 5---------<span>true</span><br>
+                x !== "5"------<span>true</span><br>
+                X !== 3 -------<span>Эта строка вызовет ошибку,<br>
+                потому что переменная X (с большой буквы) не определена.</span><br>
+                y > 5 ---------<span>false</span><br>
+                y >= 3 --------<span>true</span><br>
+                y < 5 ---------<span>true</span><br>
+                y <=2 ---------<span>false</span><br>
+                1==true -------<span>true</span><br>
+                null==undefined<span>true</span><br>
+                NaN==NaN ------<span>false</span><br>
+        </code>
+    </div>
+    <div class="item">
+        <a class="button-link">Exercise 2</a>
+
+            <code class="content">
+                x = 3 <br>
+                y = 4; <br>
+                let z = 5; <br><br>
+
+                x ||= y;---------<span>//3</span><br>
+                x || (y = z);----<span>//3</span><br>
+                x &&= y;---------<span>//4</span><br>
+                x && (y = z);----<span>//5</span><br>
+                x ??= y;---------<span>//4</span><br>
+                x ?? (y = z);----<span>//4</span><br>
+            </code>
+        </div>
+    <div class="item">
+        <a onclick="guessNumberGame()" class="button-link">Exercise 3</a>
+    </div>
+    <div class="item">
+        <a onclick="getDayTypeSwitch()" class="button-link">Exercise 4 (Use Switch)</a>
+    </div>
+    <div class="item">
+        <a onclick="getDayTypeIf()" class="button-link">Exercise 4 (Use If)</a>
+    </div>
+    <div class="item">
+        <a onclick="getGradeIf()" class="button-link">Exercise 5 (Use If)</a>
+    </div>
+    <div class="item">
+        <a onclick="getGradeTern()" class="button-link">Exercise 4 (Use Ternary)</a>
+    </div>
+    <div class="item">
+        <a class="button-link">Exercise 6 (Correct mistakes)</a>
+        <code class="content">
+
+            let firstName = null;<br>
+            let lastName = undefined;<br>
+            let username = <span>(</span>firstName || lastName <span>)</span> ?? "Guest";<br>
+
+            // console.log(username); // "Guest"<br>
+        </code>
+    </div>
+
+</div>
+
+<script>
+
+
+    const collapsibles = document.querySelectorAll('.item');
+
+    collapsibles.forEach(collapsible => {
+        collapsible.addEventListener('click', function () {
+            const currentOpen = document.querySelector('.item.is-open');
+
+            if (currentOpen && currentOpen !== this) {
+                currentOpen.classList.remove('is-open');
+                Array.from(currentOpen.children).forEach(child => {
+                    child.classList.remove('active');
+                });
+            }
+
+            this.classList.toggle('is-open');
+            Array.from(this.children).forEach(child => {
+                child.classList.toggle('active');
+            });
+        });
+    });
+
+    // <!-------------------------------------------- Task 1 Statrt -------------------------------------------->
+    let x = 3
+    let y = 4
+
+    x == 3                    // true
+    x === "3"                 // false
+    x != 5                    // true
+    x !== "5"                 // true
+    //X !== 3                    Эта строка вызовет ошибку, потому что переменная X (с большой буквы) не определена.
+    y > 5                     // false
+    y >= 3                    // true
+    y < 5                     // true
+     y <= 2                    // false
+    1 == true                 // true
+    null == undefined         // true
+    NaN == NaN                // false
+    // <!-------------------------------------------- Task 1 End -------------------------------------------->
+
+
+
+    // <!-------------------------------------------- Task 2 Start -------------------------------------------->
+
+    // <!-------------------------------------------- Task 2 End -------------------------------------------->
+    x = 3;
+    y = 4;
+    let z = 5;
+
+    x ||= y;      //3
+    x || (y = z); //3
+    x &&= y;      //4
+    x && (y = z); //5
+    x ??= y;      //4
+    x ?? (y = z); //4
+    // <!-------------------------------------------- Task 3 Statrt -------------------------------------------->
+
+    // <!-------------------------------------------- Task 3 End -------------------------------------------->
+
+
+    function parseNumber(str) {
+        const num = parseFloat(str);
+
+        if (isNaN(num)) {
+            alert(`You entered "${str}", but you need to enter a number`);
+            return NaN
+        }
+        return num;
+    }
+
+    function confirmCloseOrRetry(func) {
+
+        let agreement = confirm('You really would like to close? You entered nothing');
+        if (!agreement) {
+            func();
+        }
+    }
+
+    function guessNumberGame() {
+        let guessed = false
+
+        while (!guessed) {
+            let number = prompt('Enter a number')
+            if (number === null) {
+                confirmCloseOrRetry(() => guessNumberGame())
+                return
+            }
+            let num = parseNumber(number)
+            if (!isNaN(num)) {
+                const message = num > 3 ? 'The number is too long' : num < 3 ? 'The number is too short' : 'You guessed';
+                alert(message);
+                if (message === 'You guessed') guessed = true
+            }
+            return
+        }
+    }
+
+    // guessNumberGame() // Функция которая предлагает пользователю угадать число
+
+    // <!-------------------------------------------- Task 4 Statrt -------------------------------------------->
+    function getDayTypeIf() {
+        let daysOfWeek = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday',
+            'воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'];
+        let day = prompt('Enter a day of week').toLowerCase();
+        let res = daysOfWeek.includes(day);
+
+        if (res) {
+            if (day === 'monday' || day === 'понедельник') {
+                alert('Start of the work week!')
+            } else if (day === 'friday' || day === 'пятница') {
+                alert('End of the work week!')
+            } else {
+                alert('A regular day')
+            }
+
+        } else {
+            alert('You entered incorrected day of month. For example: "monday"...')
+            getDayTypeIf()
+        }
+
+    }
+
+    function getDayTypeSwitch() {
+        let daysOfWeek = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday',
+            'воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'];
+        let day = prompt('Enter a day of week').toLowerCase();
+        let res = daysOfWeek.includes(day);
+
+        if (res) {
+
+            switch (day) {
+                case 'monday':
+                case 'понедельник':
+                    alert('Start of the work week!')
+                    break;
+                case 'friday':
+                case 'пятница':
+                    alert('End of the work week!')
+                    break;
+                default:
+                    alert('A regular day')
+                    break;
+            }
+
+        } else {
+            alert('You entered incorrected day of month. For example: "monday"...')
+            getDayTypeSwitch()
+        }
+
+    }
+
+
+    // <!-------------------------------------------- Task 4 End -------------------------------------------->
+
+
+    // <!-------------------------------------------- Task 5 Statrt -------------------------------------------->
+    function getGradeIf() {
+        let score = prompt('Enter your score from 1 to 100');
+        if (score === null) {
+            confirmCloseOrRetry(() => getGradeIf())
+            return
+        }
+        let num = parseNumber(score);
+        let message = 'Your grade is: '
+        if (!isNaN(num)) {
+            if (score < 50) {
+                alert(`${message} F`)
+            } else if (score < 70) {
+                alert(`${message} D`)
+            } else if (score < 80) {
+                alert(`${message} C`)
+            } else if (score < 90) {
+                alert(`${message} B`)
+            } else if (score <= 100) {
+                alert(`${message} A`)
+            } else if (score > 100) {
+                alert(`Enter number from 1 to 100. You entered: "${score}"`)
+                getGradeIf()
+            }
+        } else {
+
+            getGradeIf()
+        }
+    }
+
+    function getGradeTern() {
+        let score = prompt('Enter your score from 1 to 100');
+        if (score === null) {
+            confirmCloseOrRetry(() => getGradeTern())
+            return
+        }
+        let num = parseNumber(score);
+        let message = 'Your grade is: '
+
+        if (!isNaN(num)) {
+            const grade = score < 50 ? 'F' :
+                score < 70 ? 'D' :
+                    score < 80 ? 'C' :
+                        score < 90 ? 'B' :
+                            score <= 100 ? 'A' :
+                                (alert(`Enter number from 1 to 100. You entered: "${score}"`), getGradeTern());
+            grade === undefined ? '' : alert(`${message} ${grade}`);
+        } else {
+            getGradeTern();
+        }
+
+    }
+
+    //  getGradeIf();
+    //  getGradeTern()
+    // <!-------------------------------------------- Task 5 End -------------------------------------------->
+
+
+    // <!-------------------------------------------- Task 6 Statrt -------------------------------------------->
+    let firstName = null;
+    let lastName = undefined;
+    let username = (firstName || lastName) ?? "Guest";
+
+    // console.log(username); // "Guest"
+    // <!-------------------------------------------- Task 6 End -------------------------------------------->
+
+
+
+</script>
+    </div>
+</body>
+
+</html>

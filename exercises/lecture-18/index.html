@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+<body>
+
+
+
+<script>
+
+
+
+
+
+  // <!-------------------------------------------- Task 1 Statrt -------------------------------------------->
+  // 1.1
+  // - функція checkAge повертає true, якщо параметр age перевищує 18.
+  // - в іншому випадку запитує підтвердження та повертає результат:
+  let age = prompt("Enter your age: ");
+
+  function checkAge(age) {
+    if (age > 18) {
+      return true;
+    }
+
+    return confirm('Did parents allow you?');
+
+  }
+
+  checkAge(age);
+
+  // 1.2, 1.3 Функція працюватиме точно так само,різниці немає, робота функції просто завершується після return
+  // <!-------------------------------------------- Task 1 End -------------------------------------------->
+
+
+
+  // <!-------------------------------------------- Task 2 Start -------------------------------------------->
+
+  // 2.1. Перепишіть функцію checkAge, використовуючи '?'
+  function checkAgeFour(age) {
+    return age > 18 ? true : confirm("Did parents allow you?");
+  }
+  // 2.2. Перепишіть функцію checkAge, використовуючи '||'
+  function checkAgeFourNew(age) {
+    return age > 18 || confirm("Did parents allow you?");
+  }
+
+
+  // <!-------------------------------------------- Task 2 End -------------------------------------------->
+
+
+
+  // <!-------------------------------------------- Task 3 Start -------------------------------------------->
+  // Чи потрібні дужки навколо age > 18:Дужки не обов'язкові, але можуть бути використані для покращення читабельності коду
+  // return (age > 18) || confirm('Did parents allow you?');
+  // <!-------------------------------------------- Task 3 End -------------------------------------------->
+
+
+
+  // <!-------------------------------------------- Task 4 Start -------------------------------------------->
+  // Напишіть функцію min(a,b), яка повертає найменше з двох чисел a і b. У випадку рівності a == b немає значення, що повертати. Наприклад:
+  function minA(a,b) {
+    return Math.min(a,b)
+  }
+
+  function minB(a,b) {
+    if (a < b) return a
+    return b
+  }
+  function minC(a, b) {
+    return a < b ? a : b;
+  }
+
+
+  console.log(minA(55,6));
+  console.log(minB(55,6));
+  console.log(minC(55,6));
+  // <!-------------------------------------------- Task 4 End -------------------------------------------->
+
+
+
+  // <!-------------------------------------------- Task 5 Start -------------------------------------------->
+  // Напишіть функцію pow(x,n), яка повертає x у ступені n.
+  // Або, іншими словами, множить x на себе n разів і повертає результат.
+  // У цьому завданні функція повинна підтримувати лише натуральні значення n: цілі числа від 1.
+  // <!-------------------------------------------- Task 5 End -------------------------------------------->
+
+  function pow(x, n){
+    return (n === 1) ? x : (x ** n);
+  }
+
+  console.log(pow(3,3));
+  let x = parseInt(prompt("Entered 'x':"));
+  let n = parseInt(prompt("Entered 'n' (natural number):"));
+
+  function calculatePower(x, n) {
+    if (n < 1 || !Number.isInteger(n) || x < 1 || !Number.isInteger(x)) {
+      alert("Please entered an integer number!"
+      );
+    } else {
+      return pow(x, n);
+    }
+  }
+
+  // console.log(calculatePower(x, n));
+
+  // <!-------------------------------------------- Task 6-7 Start -------------------------------------------->
+  // Викликати функцію ask, використовуючи функцію стрілок:
+  // Викликати функцію ask, використовуючи функціональний вираз:
+
+  const ask = function (question, yes, no) {
+    if (confirm(question)) yes();
+    else no();
+  };
+
+  ask(
+          "Question",
+          () => alert("Answer Yes"),
+          () => alert("Answer No")
+  );
+
+  // <!-------------------------------------------- Task 6-7 End -------------------------------------------->
+
+
+  // <!-------------------------------------------- Task 8 Start -------------------------------------------->
+  // Маємо 3 функції.
+  function A() {
+    console.log('A was called');
+    return undefined;
+  }
+  function B() {
+    console.log('B was called');
+    return false;
+  }
+  function C() {
+    console.log('C was called');
+    return "foo";
+  }
+  // 8.1. Яким чином виконати виклик функцій A() і C(), щоб на консолі отримати такий результат A was called C was called foo
+  console.log(A()??C());
+
+
+  // 8.2. Яким чином виконати виклик функцій B() і C(), щоб на консолі отримати такий результат B was called C was called foo
+  console.log(B()||C())
+  // <!-------------------------------------------- Task 8 End -------------------------------------------->
+</script>
+
+
+</body>
+</html>
