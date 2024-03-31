@@ -23,14 +23,14 @@ function multiply(n1, n2) {
 let numbers = [3, 6, 9]
 
 // <!-------------------------------------------- Task 1 Start -------------------------------------------->
-    function higherFunction(callback, initialValue, numbers) {
-        let result = initialValue;
-        for (const number of numbers) {
-            result = callback(number,result)
-        }
-        return result
-
+function higherFunction(callback, initialValue, numbers) {
+    let result = initialValue;
+    for (const number of numbers) {
+        result = callback(number,result)
     }
+    return result
+
+}
 
 console.log(higherFunction(multiply, 1, numbers));
 // <!-------------------------------------------- Task 1 End -------------------------------------------->
