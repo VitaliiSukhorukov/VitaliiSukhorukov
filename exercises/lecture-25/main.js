@@ -20,8 +20,7 @@ document.body.appendChild(ul)
 // Використовуючи метод createElement, створити впорядкований список на основі масиву listWithHref, де кожний елемент списку є тегом, а з відповідним посиланням. Наприклад, для першого елемента списку:
 const listWithHref = [{'html': "https://developer.mozilla.org/en-US/docs/Web/HTML"}, {'css': "https://developer.mozilla.org/en-US/docs/Web/CSS"}, {'javascript': "https://developer.mozilla.org/en-US/docs/Web/JavaScript"}, {'react.js': "https://react.dev"}];
 let ol = document.createElement('ol')
-listWithHref.forEach((elem, index) => {
-
+listWithHref.forEach((elem) => {
     let tag = Object.keys(elem)[0]
     let url = Object.values(elem)[0]
     let item = `<li><a href="${url}">${tag}</a></li>`
@@ -41,12 +40,12 @@ const students = [
     {'firstName': 'James', 'lastName': 'Bond', 'degree': 700},
 ]
 
-function createTable(strings, ...values) {
+function createTable(strings, values) {
+    console.log(values)
     let headers = '';
     let rows = '';
 
-
-    values[0].forEach((elem, index) => {
+    values.forEach((elem, index) => {
         if (index === 0) {
             headers = `<tr>${Object.keys(elem).map(key => `<th style="background-color: blue; color: azure;">${key}</th>`).join('')}</tr>`
         }
