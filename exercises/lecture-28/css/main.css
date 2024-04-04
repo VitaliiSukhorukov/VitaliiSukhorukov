@@ -1,0 +1,30 @@
+[data-error]{
+    color: red;
+}
+
+div {
+    margin-bottom: 5px;
+}
+input {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.error{
+    border: 1px solid red;
+
+}
+
+.success{
+    border: 1px solid #42ff00;
+
+}
+
+input.error:focus {
+    outline: none; /* Удаляем стандартную рамку при фокусе */
+    border: 2px solid crimson;
+}
+
+input.success:focus {
+    outline: none; /* Удаляем стандартную рамку при фокусе */
+    border: 2px solid #3fff00;
+}
