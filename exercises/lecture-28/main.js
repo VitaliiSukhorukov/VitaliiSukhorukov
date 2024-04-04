@@ -99,7 +99,6 @@ let checkAllValid = obj => Object.values(obj).every((isValid) => isValid);
 
 let disableButton = boolean => button.disabled = !boolean;
 
-
 function addErrorClass(field) {
     let input = document.querySelector(`#${field}`)
     if (input && input.classList.contains('success')) {
